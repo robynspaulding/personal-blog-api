@@ -1,0 +1,29 @@
+### Posts Index
+GET http://localhost:3000/posts.json
+
+### Posts Create
+POST http://localhost:3000/posts.json
+Content-Type: application/json
+
+{
+"title": "New Blog Post",
+"body": "This is a new test post that I am hoping is created successfully in my database so that I can later destory it for testing purposes",
+"date": "2022-10-20",
+"image": "https://media.istockphoto.com/photos/random-multicolored-spheres-computer-generated-abstract-form-of-large-picture-id1295274245?b=1&k=20&m=1295274245&s=170667a&w=0&h=4t-XT7aI_o42rGO207GPGAt9fayT6D-2kw9INeMYOgo="
+}
+
+### Posts Show
+GET http://localhost:3000/posts/1.json
+
+### Posts Update
+PATCH http://localhost:3000/posts/1.json
+Content-Type: application/json
+
+{
+"title": "New blog post name",
+"body": "This is the updated post. I will later destory it!",
+"image": "https://media.indiedb.com/images/games/1/78/77947/ss_ac25277f95e6dde71a5ddafd933edbd78.jpg"
+}
+
+### Posts Destroy
+DELETE http://localhost:3000/posts/1.json
