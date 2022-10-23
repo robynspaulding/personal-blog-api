@@ -1,15 +1,18 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjY2NDE5NjF9.V8imBhGlYsqSd0WgzZc4JsyoED890V3FnTaUqiBsX_M
+
 ### Posts Index
 GET http://localhost:3000/posts.json
 
 ### Posts Create
 POST http://localhost:3000/posts.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
 "title": "New Blog Post",
 "body": "This is a new test post that I am hoping is created successfully in my database so that I can later destory it for testing purposes",
-"date": "2022-10-20",
-"image": "https://media.istockphoto.com/photos/random-multicolored-spheres-computer-generated-abstract-form-of-large-picture-id1295274245?b=1&k=20&m=1295274245&s=170667a&w=0&h=4t-XT7aI_o42rGO207GPGAt9fayT6D-2kw9INeMYOgo="
+"date": "2022-10-23",
+"image": "https://m.media-amazon.com/images/I/91-Db4L6xjL.png"
 }
 
 ### Posts Show
@@ -17,16 +20,18 @@ GET http://localhost:3000/posts/1.json
 
 ### Posts Update
 PATCH http://localhost:3000/posts/1.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-"title": "New blog post name",
-"body": "This is the updated post. I will later destory it!",
+"title": "Test authentication Post",
+"body": "This is a test to check if the user authentication is working properly",
 "image": "https://media.indiedb.com/images/games/1/78/77947/ss_ac25277f95e6dde71a5ddafd933edbd78.jpg"
 }
 
 ### Posts Destroy
 DELETE http://localhost:3000/posts/1.json
+Authorization: Bearer {{jwt}}
 
 
 ### Users create (signup)
