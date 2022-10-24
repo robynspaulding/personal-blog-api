@@ -1,42 +1,45 @@
 class PostsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
-  
+
   def index
-    post = Post.all
-    render json: post.as_json
+    posts = Post.all.order(:id)
+    render json: posts
   end
 
   def create
     post = Post.new(
+      user_id: current_user.id,
       title: params[:title],
       body: params[:body],
-      date: params[:date],
-      image: params[:image]
+      image: params[:image],
     )
-    post.save
-    render json: post.as_json
+    if post.save
+      render json: post
+    else
+      render json: { errors: post.errors.full_messages }, status: :bad_request
+    end
   end
 
   def show
     post = Post.find_by(id: params[:id])
-    render json: post.as_json
+    render json: post
   end
 
   def update
     post = Post.find_by(id: params[:id])
     post.title = params[:title] || post.title
     post.body = params[:body] || post.body
-    post.date = params[:date] || post.date
     post.image = params[:image] || post.image
-
-    post.save
-
-    render json: post.as_json
+    if post.save
+      render json: post
+    else
+      render json: { errors: post.errors.full_messages }, status: :bad_request
+    end
   end
 
   def destroy
     post = Post.find_by(id: params[:id])
     post.destroy
-    render json: {message: "Post successfully deleted."}
+    render json: { message: "Post successfully destroyed!" }
   end
 end
