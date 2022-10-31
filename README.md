@@ -1,25 +1,28 @@
-# README
+# personal-blog-api (Backend)
+# Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## General info
+This project is a simple blog api that allows users to Signup, Login, Create, Edit and Delete a Post (while logged in) and Logout. You can access the database via the <a href="https://github.com/robynspaulding/personal-blog-frontend">frontend component </a> or through rails console - although that won't be a pretty to look at. 
 
-Things you may want to cover:
+In the future I'd like to add a comments section and like button. 
+	
+## Technologies
+Project is created with:
+* React.js (Frontend)
+* Ruby on Rails 
+* Bootstrap
+	
+## Setup
+Clone this repo to the file you choose your desktop and run npm install to install all the dependencies.
 
-* Ruby version
+```
+$ cd [file_name]
+git clone https://github.com/robynspaulding/personal-blog-api.git
+$ npm install
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# personal-blog-api
+## Usage
+Use this platform to post your own blogs and/or images!
