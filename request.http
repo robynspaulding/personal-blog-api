@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjY2NDE5NjF9.V8imBhGlYsqSd0WgzZc4JsyoED890V3FnTaUqiBsX_M
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjY3MzE1Mzh9.mKvTF1g__GRmCEaT8cXnrMOx6wIKOACc2sb9cyMLHSQ
 
 ### Posts Index
 GET http://localhost:3000/posts.json
@@ -19,7 +19,7 @@ Content-Type: application/json
 GET http://localhost:3000/posts/1.json
 
 ### Posts Update
-PATCH http://localhost:3000/posts/1.json
+PATCH http://localhost:3000/posts/3.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
