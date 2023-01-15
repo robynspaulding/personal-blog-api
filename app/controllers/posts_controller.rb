@@ -12,6 +12,7 @@ class PostsController < ApplicationController
       title: params[:title],
       body: params[:body],
       image: params[:image],
+      date: Date.current
     )
     if post.save
       render json: post
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     post.title = params[:title] || post.title
     post.body = params[:body] || post.body
     post.image = params[:image] || post.image
+    post.date = Date.current 
     if post.save
       render json: post
     else
